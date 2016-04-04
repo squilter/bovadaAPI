@@ -45,10 +45,7 @@ class PlaceBet(object):
 					if key:
 						print "got the key"
 						r = requests.get("https://sports.bovada.lv/services/sports/bet/betslip/{}".format(key))
-						if bet_went_through(r.json()):
-							return True
-						else:
-							return False
+						return bet_went_through(r.json())
 
 				try:
 					print response.keys()
